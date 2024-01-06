@@ -1,0 +1,77 @@
+<!-- Currency Converter Container -->
+<div class="container mt-5">
+  <!-- Header -->
+  <h2>Currency Converter</h2>
+  <p>
+    This simple currency converter allows you to convert an amount from one
+    currency to another.
+  </p>
+
+  <!-- Amount Input Form -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-group form-control-lg">
+        <label for="amount"
+          ><i class="fa-solid fa-money-bill"></i> Enter amount:
+          <i class="fa-solid fa-money-bill"></i
+        ></label>
+        <!-- Input for entering the amount to convert -->
+        <input
+          type="number"
+          id="amount"
+          class="form-control"
+          placeholder="Enter amount..."
+          [(ngModel)]="amount"
+          (input)="convert()"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Currency Selection Dropdowns -->
+  <div class="row mt-4">
+    <div class="col-lg-6">
+      <!-- Dropdown for selecting the source currency -->
+      <select
+        class="form-select"
+        id="fromCurrency"
+        [(ngModel)]="fromCurrency"
+        (change)="convert()"
+      >
+        <option *ngFor="let currency of currencies">{{ currency }}</option>
+      </select>
+    </div>
+    <div class="col-lg-6">
+      <!-- Dropdown for selecting the target currency -->
+      <select
+        class="form-select"
+        id="toCurrency"
+        [(ngModel)]="toCurrency"
+        (change)="convert()"
+      >
+        <option *ngFor="let currency of currencies">{{ currency }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Result Display -->
+  <div *ngIf="amount > 0" class="result-container mt-3">
+    <!-- Original amount and currency -->
+    <span class="badge bg-success amount-badge">{{ amount }} {{ fromCurrency }}</span>
+    <!-- 'ARE' label indicating conversion -->
+    <span class="badge bg-secondary">ARE</span>
+    <!-- Resulting amount and currency -->
+    <span class="badge bg-success result-badge">{{ result | number : "0.0-2" }} {{ toCurrency }}</span>
+  </div>
+</div>
+
+<!-- Additional Information Section -->
+<br /><br />
+<div class="end">
+  <!-- API Usage Information -->
+  <h3>I use this api to convert:</h3>
+  <!-- Link to the API documentation -->
+  <a href="https://github.com/CrixoDev" target="_blank">
+    https://app.exchangerate-api.com/
+  </a>
+</div>

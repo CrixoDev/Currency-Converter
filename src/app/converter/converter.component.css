@@ -1,0 +1,27 @@
+/* Styles for the result container */
+.result-container {
+  text-align: center;
+}
+
+/* Styles for amount and result badges */
+.amount-badge,
+.result-badge {
+  font-size: 1.2rem;  /* Set the font size for badges */
+  margin-right: 10px; /* Provide some spacing between badges */
+}
+
+/* Custom styling for success background color */
+.bg-success {
+  background-color: #28a745 !important; /* Green background color */
+}
+
+/* Custom styling for secondary background color */
+.bg-secondary {
+  background-color: #6c757d !important; /* Gray background color */
+  margin-right: 1%; /* Provide some spacing to the right */
+}
+
+/* Styles for the 'end' class */
+.end {
+  margin-left: 2%; /* Set left margin for the 'end' section */
+}
